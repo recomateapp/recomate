@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "167240103398",
+    "project_id": "recomate-350a1",
+    "storage_bucket": "recomate-350a1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167240103398:android:146b759726e34818f3d227",
+        "android_client_info": {
+          "package_name": "com.mycompany.recomate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167240103398-848fvsoak2ml659v5nhbnu1ksht0o7ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.recomate",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "167240103398-h4vj5552f6rppqq904at13ne5v82gseh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrKruLC1Et8_O8dShBNf0_XSjzGcESrTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167240103398-h4vj5552f6rppqq904at13ne5v82gseh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "167240103398-rsabfi3lq5ce95c813lljbsvavbp0hic.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.recomate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

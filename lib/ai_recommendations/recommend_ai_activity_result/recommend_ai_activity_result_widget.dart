@@ -1,0 +1,537 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'recommend_ai_activity_result_model.dart';
+export 'recommend_ai_activity_result_model.dart';
+
+/// Welcome screen
+class RecommendAiActivityResultWidget extends StatefulWidget {
+  const RecommendAiActivityResultWidget({
+    super.key,
+    this.aiRespData,
+    String? test,
+  }) : this.test = test ?? 'test';
+
+  final List<dynamic>? aiRespData;
+  final String test;
+
+  static String routeName = 'recommend_ai_activity_result';
+  static String routePath = '/recommendAiActivityResult';
+
+  @override
+  State<RecommendAiActivityResultWidget> createState() =>
+      _RecommendAiActivityResultWidgetState();
+}
+
+class _RecommendAiActivityResultWidgetState
+    extends State<RecommendAiActivityResultWidget> with RouteAware {
+  late RecommendAiActivityResultModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => RecommendAiActivityResultModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = DebugModalRoute.of(context);
+    if (route != null) {
+      routeObserver.subscribe(this, route);
+    }
+    debugLogGlobalProperty(context);
+  }
+
+  @override
+  void didPopNext() {
+    if (mounted && DebugFlutterFlowModelContext.maybeOf(context) == null) {
+      setState(() => _model.isRouteVisible = true);
+      debugLogWidgetClass(_model);
+    }
+  }
+
+  @override
+  void didPush() {
+    if (mounted && DebugFlutterFlowModelContext.maybeOf(context) == null) {
+      setState(() => _model.isRouteVisible = true);
+      debugLogWidgetClass(_model);
+    }
+  }
+
+  @override
+  void didPop() {
+    _model.isRouteVisible = false;
+  }
+
+  @override
+  void didPushNext() {
+    _model.isRouteVisible = false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    DebugFlutterFlowModelContext.maybeOf(context)
+        ?.parentModelCallback
+        ?.call(_model);
+
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          body: SafeArea(
+            top: true,
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(0.0),
+                    child: Image.asset(
+                      'assets/images/background_style.png',
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.safePop();
+                              },
+                              child: Container(
+                                width: 52.0,
+                                height: 52.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Color(0xFF555555),
+                                  ),
+                                ),
+                                child: Icon(
+                                  Icons.arrow_back_ios_new,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Activities',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
+                                  ),
+                            ),
+                            Container(
+                              width: 52.0,
+                              height: 52.0,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Builder(
+                            builder: (context) {
+                              final aiRespItem =
+                                  widget!.aiRespData?.toList() ?? [];
+                              _model.debugGeneratorVariables[
+                                      'aiRespItem${aiRespItem.length > 100 ? ' (first 100)' : ''}'] =
+                                  debugSerializeParam(
+                                aiRespItem.take(100),
+                                ParamType.JSON,
+                                isList: true,
+                                link:
+                                    'https://app.flutterflow.io/project/recomate-w5oj9e?tab=uiBuilder&page=recommend_ai_activity_result',
+                                name: 'dynamic',
+                                nullable: false,
+                              );
+                              debugLogWidgetClass(_model);
+
+                              return GridView.builder(
+                                padding: EdgeInsets.zero,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 10.0,
+                                  mainAxisSpacing: 10.0,
+                                  childAspectRatio: 0.46,
+                                ),
+                                primary: false,
+                                scrollDirection: Axis.vertical,
+                                itemCount: aiRespItem.length,
+                                itemBuilder: (context, aiRespItemIndex) {
+                                  final aiRespItemItem =
+                                      aiRespItem[aiRespItemIndex];
+                                  return Container(
+                                    width: 190.0,
+                                    constraints: BoxConstraints(
+                                      maxHeight: 380.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Color(0x4D4D3C3C),
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(12.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                child: Image.network(
+                                                  valueOrDefault<String>(
+                                                    getJsonField(
+                                                      aiRespItemItem,
+                                                      r'''$['image_url']''',
+                                                    )?.toString(),
+                                                    'https://s3-alpha-sig.figma.com/img/f930/c9c5/20c1a967330437d022e6f4e3dbff8372?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=avQDDfhHxf6N8bxDRA17FbD5~EdpdvYnJS8cX51IoTRypyNFUDKK10jZQ6aoW~4eL2uEhN7a3HAzN9sYeIPyyGgrVclrxNbcMF6DACIXv6gqTBLxCaVwilUp4oGVyd1KkrJZGzdxb7Y945TVWVBwaxdFKdt7E2H~VSJ4PfK4DAn65CceQNpc~LDf3wmC5WvyldR4fGxlt83huS5OP1~It6akGO5BzaT2QQz~U02AUwTQrtU4O8k1zYQ1FDMffytMNTzaldvBNyTcamMI2fPk9b5wZgV9s15WVUwlUDoaR3i~FV4T5mMj26eZCimoPvm9jRdNjaRl-GYGrNM0Sn0mpw__',
+                                                  ),
+                                                  width: 174.0,
+                                                  height: 175.0,
+                                                  fit: BoxFit.cover,
+                                                  errorBuilder: (context, error,
+                                                          stackTrace) =>
+                                                      Image.asset(
+                                                    'assets/images/error_image.png',
+                                                    width: 174.0,
+                                                    height: 175.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    constraints: BoxConstraints(
+                                                      maxHeight: 40.0,
+                                                    ),
+                                                    decoration: BoxDecoration(),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        getJsonField(
+                                                          aiRespItemItem,
+                                                          r'''$['title']''',
+                                                        )?.toString(),
+                                                        'title',
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Color(0xFFFBB040),
+                                                      size: 16.0,
+                                                    ),
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        getJsonField(
+                                                          aiRespItemItem,
+                                                          r'''$['rating']''',
+                                                        )?.toString(),
+                                                        'rating',
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                fontSize: 12.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 4.0)),
+                                                ),
+                                              ],
+                                            ),
+                                            Container(
+                                              constraints: BoxConstraints(
+                                                maxHeight: 60.0,
+                                              ),
+                                              decoration: BoxDecoration(),
+                                              child: Text(
+                                                getJsonField(
+                                                  aiRespItemItem,
+                                                  r'''$['description']''',
+                                                ).toString(),
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color:
+                                                              Color(0xFFADADAD),
+                                                          fontSize: 11.5,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                          lineHeight: 1.1,
+                                                        ),
+                                              ),
+                                            ),
+                                            Divider(
+                                              thickness: 1.0,
+                                              color: Color(0xFF333333),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                'Reservations Here',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color:
+                                                              Color(0xFFADADAD),
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                          lineHeight: 1.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await launchURL(
+                                                          valueOrDefault<
+                                                              String>(
+                                                        getJsonField(
+                                                          aiRespItemItem,
+                                                          r'''$['Link']''',
+                                                        )?.toString(),
+                                                        'recomate',
+                                                      ));
+                                                    },
+                                                    text: 'Explore Now',
+                                                    options: FFButtonOptions(
+                                                      padding:
+                                                          EdgeInsets.all(7.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 8.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily),
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              4.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ].divide(SizedBox(height: 8.0)),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        if (FFAppConstants.versionNumber == 'v2')
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 25.0, 0.0, 0.0),
+                              child: Container(
+                                width: 195.0,
+                                height: 49.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x4D4D3C3C),
+                                  borderRadius: BorderRadius.circular(28.0),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 16.0, 24.0, 16.0),
+                                    child: Text(
+                                      'Suggest More Options',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ]
+                          .divide(SizedBox(height: 8.0))
+                          .addToStart(SizedBox(height: 16.0))
+                          .addToEnd(SizedBox(height: 16.0)),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
